@@ -1,7 +1,6 @@
-const api_key = 'SQzW3VBqCB0FAPOuDT901toXG4gnKTrH'
-const categoria = 'messi'
+const api_key = 'MWx3SI7S6qkmjw3B1OGIgMY3nPaVFFQj'
 const limit = 10
-const reqGif = async() =>{
+export const reqGif = async(categoria) =>{
     try {
       
       const resp = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${categoria}&limit=${limit}`)
@@ -10,6 +9,7 @@ const reqGif = async() =>{
           id : gif.id,
           url: gif.images.original.url
       }))
+      return arreglosGifs
     } catch (err) {
       console.error
     }
