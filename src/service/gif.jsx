@@ -9,6 +9,7 @@ export const reqGif = async(categoria) =>{
           id : gif.id,
           url: gif.images.original.url
       }))
+      console.log(data)
       return arreglosGifs
     } catch (err) {
       console.error
